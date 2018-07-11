@@ -111,7 +111,7 @@ public class Warehouse {
 		rmIndex = findProductIdx(product);
 		
 		//삭제 안된 제품을 유지할 새 배열
-		Product[] newProducts;
+		Product[] newProducts = this.products;
 		
 		
 		if (rmIndex > -1) {
@@ -134,8 +134,10 @@ public class Warehouse {
 				for (int idx = 0; idx < products.length - 1; idx++) {
 					newProducts[idx] = products[idx]; 
 				}
-			}
-		}
+			}			
+			this.products = newProducts;
+			
+		} // outer if end
 	} // method remove end
 	
 	/**

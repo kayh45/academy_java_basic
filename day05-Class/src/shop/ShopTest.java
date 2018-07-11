@@ -22,7 +22,7 @@ public class ShopTest {
 		
 		// 4. 매장을 오픈
 		Shop abcMart = new Shop(manager);
-		
+ 		
 		
 		//-----------------------------------------------
 		// 매장에 입고할 신규 제품(신발) 이 매장에 도착했다.
@@ -45,6 +45,27 @@ public class ShopTest {
 		for (Product product : allProducts) {
 			product.print();
 		}
+		
+		// 3. 아디다스 제품 수정
+		Product adidas2 = new Product("S001", "슈퍼스타", 75000, 5);
+		abcMart.set(adidas2);
+	
+		// 4. 수정된 아디다스 제품 수정 확인
+		System.out.println();
+		abcMart.get(new Product("S001", null, 0, 0)).print();
+		
+		// 5. 판매 종료할 제품 폐기
+		abcMart.remove(new Product("S001", null, 0, 0));
+		
+		// 6. 폐기 확인을 위해 전체 목록 재 조회
+		System.out.println();
+		for (Product product : abcMart.getAllProducts()) {
+			product.print();
+		}
+		
+		nike.sell(3);
+		
+		
 	}
 
 }

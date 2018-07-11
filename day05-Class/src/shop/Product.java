@@ -76,7 +76,7 @@ public class Product {
 	 * 제품의 상태를 출력하는 메소드
 	 */
 	public void print() {
-		System.out.printf("제품 정보 [제품코드 : %s, 제품명 : %s, 제품가격 : %d, 재고수량 : %d]%n", prodCode, prodName, price, quantity);
+		System.out.printf("제품 정보 [제품코드 : %s, 제품명 : %s, 제품가격 : %,6d원, 재고수량 : %3d]%n", prodCode, prodName, price, quantity);
 	}
 	/**
 	 * 입력된 퍼센트 만큼 할인가격 리턴하는 메소드
