@@ -1,4 +1,4 @@
-package inheritence.basic.person;
+package inheritance.basic.person;
 
 /**
  * 일반적인 사람의 정보를 저장하는 클래스

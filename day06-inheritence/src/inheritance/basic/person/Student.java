@@ -1,4 +1,4 @@
-package inheritence.abstrct.person;
+package inheritance.basic.person;
 
 /**
  * 학생의 정보를 저장할 클래스
@@ -33,12 +33,6 @@ public class Student extends Person {
 	public String toString() {
 		String studentStr = String.format(", 전공 : %s", major);
 		return "학생 정보 [" + super.toString() + studentStr + "]";
-	}
-	
-	@Override
-	public void print() {
-		System.out.println("=== 학생 ===");
-		System.out.println(this);
 	}
 	
 }

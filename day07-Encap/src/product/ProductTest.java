@@ -1,4 +1,4 @@
-package inheritence.basic.product;
+package product;
 /**
  * 매장에서 제품을 생성하고 입출고, 할인가격을 구하는 등의
  * 기능을 테스트 하는 클래스 
@@ -21,7 +21,7 @@ public class ProductTest {
 		
 		//  (2) 20% 할인가는 어떻게 되나?
 		int dcPrice = product.discount(20);
-		System.out.printf("제품 가격 : %d, 20%% 할인가 : %d%n", 51330, dcPrice);
+		System.out.printf("제품 가격 : %,d원, 20%% 할인가 : %,d원%n", product.getPrice(), dcPrice);
 		
 		//  (3) 2개 판매(sell)
 		product.sell(2);

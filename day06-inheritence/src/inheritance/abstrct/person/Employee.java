@@ -1,4 +1,4 @@
-package inheritence.abstrct.person;
+package inheritance.abstrct.person;
 
 public class Employee extends Person {
 	// 1. 멤버 변수 선언부

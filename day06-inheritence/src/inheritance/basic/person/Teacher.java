@@ -1,4 +1,4 @@
-package inheritence.basic.person;
+package inheritance.basic.person;
 
 public class Teacher extends Person {
 	// 1. 멤버 변수 선언부

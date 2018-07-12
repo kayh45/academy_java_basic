@@ -1,4 +1,4 @@
-package inheritence.basic.person;
+package inheritance.basic.person;
 
 /**
  * Person 과 상속관계인 Student 를 
