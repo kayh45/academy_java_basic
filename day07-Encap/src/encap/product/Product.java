@@ -1,4 +1,4 @@
-package product;
+package encap.product;
 /**
  * 
  * 기본 생성자, 필드 1개씩 늘려가며 총 5개 중복정의

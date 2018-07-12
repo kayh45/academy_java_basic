@@ -1,4 +1,4 @@
-package product;
+package encap.product;
 /**
  * 매장에서 제품을 생성하고 입출고, 할인가격을 구하는 등의
  * 기능을 테스트 하는 클래스 
