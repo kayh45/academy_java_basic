@@ -19,7 +19,7 @@ public class SetWarehouse implements GeneralWarehouse {
 		super();
 		this.products = products;
 	}
-	
+	 
 	// 메소드 선언부
 	@Override
 	public int add(Product product) {
@@ -42,6 +42,7 @@ public class SetWarehouse implements GeneralWarehouse {
 			// prodCode만 같으면 같은 객체로 인식
 			if (prod.equals(product)) {
 				found = prod; 
+				break;
 			}
 		}
 		
