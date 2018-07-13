@@ -1,12 +1,14 @@
 package shop.test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import shop.GeneralWarehouse;
-import shop.ListWarehouse;
 import shop.Manager;
 import shop.Product;
+import shop.SetWarehouse;
 import shop.Shop;
 
 /**
@@ -23,9 +25,13 @@ public class ShopTest {
 		// 1. 창고에 들여 놓을 제품 선반이 먼저 필요
 		Product[] products = new Product[0];
 		List<Product> prods = new ArrayList<Product>();
+		Set<Product> prodsSet = new HashSet<Product>();
 		
 		// 2. 선반을 설치할 창고를 지어야 함
-		GeneralWarehouse warehouse = new ListWarehouse(prods);
+		
+//		GeneralWarehouse warehouse = new ArrayWarehouse(prods);
+//		GeneralWarehouse warehouse = new ListWarehouse(prods);
+		GeneralWarehouse warehouse = new SetWarehouse(prodsSet);
 		
 		// 3. 매장을 관리할 매니저를 고용함
 		Manager manager = new Manager(warehouse);
@@ -53,6 +59,8 @@ public class ShopTest {
 		// 2. 입고된 제품 전체 확인
 		abcMart.getAllProducts();
 		
+		System.out.println("---------------------------------------");
+		
 		// 3. 아디다스 제품 수정
 		Product adidas2 = new Product("S001", "슈퍼스타", 75000, 5);
 		abcMart.set(adidas2);
@@ -61,14 +69,17 @@ public class ShopTest {
 		System.out.println();
 		abcMart.get(new Product("S001", null, 0, 0));
 		
+		System.out.println("---------------------------------------");
+
 		// 5. 판매 종료할 제품 폐기
+		System.out.println();
 		abcMart.remove(new Product("S001", null, 0, 0));
 		
 		// 6. 폐기 확인을 위해 전체 목록 재 조회
 		System.out.println("---------------------------------------");
 		abcMart.getAllProducts();
 		
-		nike.sell(3);
+//		nike.sell(3);
 		
 		
 	}

@@ -70,12 +70,18 @@ public class ArrayWarehouse implements GeneralWarehouse {
 	 * 제품 선반 크기를 1 증가시키면서 추가
 	 * @param product
 	 */
-	public void add(Product product) {
+	public int add(Product product) {
+		int oldSize = this.products.length;
+		
 		// 이미 존재하는 배열의 크기 + 1 길이로 복사
-		this.products = Arrays.copyOf(products
-				                    , products.length + 1);
+		this.products = Arrays.copyOf(products, products.length + 1);
+		
+		int newSize = this.products.length;
+		
 		// 마지막 인덱스에 신규 제품 정보 입력
 		this.products[products.length - 1] = product;
+		
+		return (oldSize == newSize) ? 0 : 1;
 	}
 	
 	/**
@@ -97,20 +103,22 @@ public class ArrayWarehouse implements GeneralWarehouse {
 	 * 입력된 값으로 수정하여 저장함
 	 * @param product
 	 */
-	public void set(Product product) {
+	public int set(Product product) {
 		// 수정하고자 하는 제품의 인덱스
 		int setIndex = -1;
 				
 		if ((setIndex = findProductIdx(product)) > -1) {
 			products[setIndex] = product;
 		}
+		
+		return setIndex;
 	}
 	
 	/**
 	 * 판매하지 않을 제품 정보를 폐기
 	 * @param product
 	 */
-	public void remove(Product product) {
+	public int remove(Product product) {
 		// 폐기할 제품이 위치하는 인덱스
 		int rmIndex = -1;
 		rmIndex = findProductIdx(product);
@@ -142,6 +150,8 @@ public class ArrayWarehouse implements GeneralWarehouse {
 			this.products = newProducts;
 			
 		} // outer if end
+		
+		return rmIndex;
 	} // method remove end
 	
 	/**
