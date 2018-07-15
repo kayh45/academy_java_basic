@@ -147,7 +147,7 @@ public class Shoe {
 	@Override
 	public String toString() {
 		String strShoe = String.format("제품 정보 [제품코드 : %s, 제품명 : %s, 사이즈 : %dmm, "
-				+ "제품가격 : %,d원, 타입 : %s, 재고수량 : %d개]%n", shoeCode, shoeName, size, price, type, quantity);
+				+ "제품가격 : %,d원, 타입 : %s, 재고수량 : %d개]", shoeCode, shoeName, size, price, type, quantity);
 		
 		return strShoe;
 	}

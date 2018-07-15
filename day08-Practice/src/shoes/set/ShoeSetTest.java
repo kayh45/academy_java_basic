@@ -1,9 +1,11 @@
 package shoes.set;
 
 import shoes.Shoe;
-
+/* ****************************************************************
+ * by.hnc : 강사라면 이런식으로 테스트할 것입니다.
+ * **************************************************************** */
 /**
- * Shoe 클래스를 테스트 (Set)
+ * Shoe 클래스를 테스트 (List)
  * @author PC38219
  *
  */
@@ -27,34 +29,44 @@ public class ShoeSetTest {
 		System.out.println("======== 3 ========");
 		// 3. 각 자료구조별 shoes 를 foreach 로 출력
 		for (Shoe shoe : shoes.getAllShoes()) {
-			System.out.print(shoe);
+			System.out.println(shoe);
 		}
 		
 		System.out.println("======== 4 ========");
 		
-		// 4. SH003 번 코드로 등록된 신발의 정보 1개를 출력	
+		// 4. SH003 번 코드로 등록된 신발의 정보 1개를 출력
+		// by.hnc : 코드값만 가진 비교 객체를 생성
+		Shoe shHnc003 = new Shoe("SH003");
+		//          코드 값만 가진 객체로 get() 수행
+		System.out.println(shoes.get(shHnc003));
 		
-		System.out.print(shoes.get(new Shoe("SH003")));
-
 		// 5. SH003 번 코드로 등록된 신발의 정보에서 재고를 0으로 조정
-		Shoe sh003 = shoes.get(new Shoe("SH003"));
+		// by.hnc : 다른 값은 모두 같고 재고가 0인 객체를 새로 생성
+		Shoe shHncQ0 = new Shoe("SH003", "샤이나 3.5", 245, 39000, "워킹부츠", 0);
+		// 재고가 0인 객체를 새로 세팅
+		shoes.set(shHncQ0);
 		
-		sh003.setQuantity(0);
-		shoes.set(sh003);		
+		
+		
 		
 		System.out.println("======== 6 ========");
 		// 6. 재고가 조정된 내용 출력
-		System.out.print(shoes.get(new Shoe("SH003")));
+		// by.hnc : 조정내용 검색할때는 코드 값만 가진 객체로 다시 조회
+		System.out.println(shoes.get(shHnc003));
 
 		// 7. SH003 번 코드로 등록된 신발 정보를 삭제
-		shoes.remove(shoes.get(new Shoe("SH003")));
+//		shoes.remove(shoes.get(new Shoe("SH003")));
+		// by.hnc : 굳이 get 을 한 후에 그 리턴받은 결과로 삭제할 필요 없습니다.
+		//          remove() 로직을 보면 코드값만으로 비교하여 삭제 할 수 있으므로
+		//          아래의 로직으로 정확한 삭제가 가능합니다.
+		//          자신이 작성했던 코드의 의미를 다시한번 곰곰히 생각해보기 바랍니다.
+		shoes.remove(new Shoe("SH003"));
 
 		System.out.println("======== 8 ========");
 		// 8. 삭제된 신발의 정보가 shoes 에 없는 것을 출력(전체 출력)
 		for (Shoe shoe : shoes.getAllShoes()) {
-			System.out.print(shoe);
+			System.out.println(shoe);
 		}
-		
 
 	}
 

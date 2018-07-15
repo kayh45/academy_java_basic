@@ -1,4 +1,4 @@
-package shoes.map;
+package shoes.list;
 
 import shoes.Shoe;
 /* ****************************************************************
@@ -9,11 +9,11 @@ import shoes.Shoe;
  * @author PC38219
  *
  */
-public class ShoeMapTest {
+public class ShoeListTestInstructor {
 
 	public static void main(String[] args) {
 
-		ShoeMap shoes = new ShoeMap();
+		ShoeList shoes = new ShoeList();
 		
 		Shoe adidas = new Shoe("SH001", "슈퍼스타", 260, 87200, "스니커즈", 20);
 		Shoe howkins = new Shoe("SH002", "플레인 로퍼", 275, 103500, "구두", 8);
