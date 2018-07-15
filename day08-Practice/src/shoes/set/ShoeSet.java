@@ -20,6 +20,8 @@ public class ShoeSet {
 		super();
 		this.shoes = shoes;
 	}
+	
+	// 메소드 선언부	
 	/**
 	 * add(Shoe shoe) : int : 추가 성공 : 1, 추가 실패 : 0
 	 * @param shoe
@@ -65,9 +67,7 @@ public class ShoeSet {
 		if (isContain(shoe)) {
 			shoes.remove(shoe);
 			rmvInt = 1;
-		} else {
-			rmvInt = 0;
-		}
+		} 
 		
 		return rmvInt;
 	}
@@ -89,6 +89,7 @@ public class ShoeSet {
 		
 		return gotShoe;
 	}
+	
 	/**
 	 * getAllShoes()  : List<Shoe> : 전체목록을 리턴
 	 * @return

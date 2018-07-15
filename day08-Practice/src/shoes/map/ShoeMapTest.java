@@ -1,17 +1,18 @@
-package shoes.set;
+package shoes.map;
 
 import shoes.Shoe;
 
 /**
- * Shoe 클래스를 테스트 (Set)
+ * Shoe 클래스를 테스트 (Map)
  * @author PC38219
  *
  */
-public class ShoeSetTest {
+public class ShoeMapTest {
 
 	public static void main(String[] args) {
 
-		ShoeSet shoes = new ShoeSet();
+		ShoeMap shoes = new ShoeMap();
+		
 		
 		Shoe adidas = new Shoe("SH001", "슈퍼스타", 260, 87200, "스니커즈", 20);
 		Shoe howkins = new Shoe("SH002", "플레인 로퍼", 275, 103500, "구두", 8);
@@ -26,6 +27,7 @@ public class ShoeSetTest {
 		
 		System.out.println("======== 3 ========");
 		// 3. 각 자료구조별 shoes 를 foreach 로 출력
+		
 		for (Shoe shoe : shoes.getAllShoes()) {
 			System.out.print(shoe);
 		}
@@ -54,7 +56,6 @@ public class ShoeSetTest {
 		for (Shoe shoe : shoes.getAllShoes()) {
 			System.out.print(shoe);
 		}
-		
 
 	}
 

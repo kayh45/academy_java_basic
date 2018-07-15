@@ -1,8 +1,5 @@
 package shoes.list;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import shoes.Shoe;
 
 /**
@@ -14,7 +11,6 @@ public class ShoeListTest {
 
 	public static void main(String[] args) {
 
-//		List<Shoe> shoes = new ArrayList<Shoe>();
 		ShoeList shoes = new ShoeList();
 		
 		Shoe adidas = new Shoe("SH001", "슈퍼스타", 260, 87200, "스니커즈", 20);
@@ -30,7 +26,9 @@ public class ShoeListTest {
 		
 		System.out.println("======== 3 ========");
 		// 3. 각 자료구조별 shoes 를 foreach 로 출력
-		System.out.println(shoes.getAllShoes());
+		for (Shoe shoe : shoes.getAllShoes()) {
+			System.out.print(shoe);
+		}
 		
 		System.out.println("======== 4 ========");
 		
@@ -53,8 +51,9 @@ public class ShoeListTest {
 
 		System.out.println("======== 8 ========");
 		// 8. 삭제된 신발의 정보가 shoes 에 없는 것을 출력(전체 출력)
-		System.out.println(shoes.getAllShoes());
-		
+		for (Shoe shoe : shoes.getAllShoes()) {
+			System.out.print(shoe);
+		}
 
 	}
 

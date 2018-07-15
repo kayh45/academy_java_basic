@@ -19,6 +19,8 @@ public class ShoeList {
 		super();
 		this.shoes = shoes;
 	}
+	
+	// 메소드 선언부
 	/**
 	 * add(Shoe shoe) : int : 추가 성공 : 1, 추가 실패 : 0
 	 * @param shoe
@@ -83,6 +85,7 @@ public class ShoeList {
 		
 		return shoes.get(getIdx);
 	}
+	
 	/**
 	 * getAllShoes()  : List<Shoe> : 전체목록을 리턴
 	 * @return
@@ -91,6 +94,17 @@ public class ShoeList {
 		return shoes;
 	}
 	
+	/**
+	 * 매개변수로 Shoe 타입의 객체를 입력받아
+	 * shoes (List<Shoe>)에서 해당 객체가 있는지 없는지
+	 * 있다면 어떤 인덱스를 가지고 있는지를 리턴
+	 * 
+	 * @param shoe - 리스트에서 찾으려 하는 Shoe 타입의 객체
+	 * 
+	 * @return 객체가 리스트 안에 없으면 -1을 리턴하고
+	 * 		   객체가 있으면 그 인덱스를 리턴한다.
+	 * 
+	 */
 	private int findShoeIdx(Shoe shoe) {
 		int index = -1;
 		
