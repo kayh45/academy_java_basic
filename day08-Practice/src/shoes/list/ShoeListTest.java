@@ -27,24 +27,24 @@ public class ShoeListTest {
 		System.out.println("======== 3 ========");
 		// 3. 각 자료구조별 shoes 를 foreach 로 출력
 		for (Shoe shoe : shoes.getAllShoes()) {
-			System.out.print(shoe);
+			System.out.println(shoe);
 		}
 		
 		System.out.println("======== 4 ========");
 		
 		// 4. SH003 번 코드로 등록된 신발의 정보 1개를 출력	
 		
-		System.out.print(shoes.get(new Shoe("SH003")));
+		System.out.println(shoes.get(new Shoe("SH003")));
 
 		// 5. SH003 번 코드로 등록된 신발의 정보에서 재고를 0으로 조정
 		Shoe sh003 = shoes.get(new Shoe("SH003"));
 		
-		sh003.setQuantity(0);
+//		sh003.setQuantity(0);
 		shoes.set(sh003);		
 		
 		System.out.println("======== 6 ========");
 		// 6. 재고가 조정된 내용 출력
-		System.out.print(shoes.get(new Shoe("SH003")));
+		System.out.println(shoes.get(new Shoe("SH003")));
 
 		// 7. SH003 번 코드로 등록된 신발 정보를 삭제
 		shoes.remove(shoes.get(new Shoe("SH003")));
@@ -52,7 +52,7 @@ public class ShoeListTest {
 		System.out.println("======== 8 ========");
 		// 8. 삭제된 신발의 정보가 shoes 에 없는 것을 출력(전체 출력)
 		for (Shoe shoe : shoes.getAllShoes()) {
-			System.out.print(shoe);
+			System.out.println(shoe);
 		}
 
 	}
