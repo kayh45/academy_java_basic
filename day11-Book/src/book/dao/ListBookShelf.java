@@ -33,7 +33,7 @@ public class ListBookShelf implements BookShelf {
 		int insCnt = 0;
 		int foundIdx = findBookIdx(book);
 		
-		if (foundIdx > -1) {
+		if (foundIdx == -1) {
 			books.add(book);
 			insCnt = 1;
 		} else {
@@ -173,6 +173,22 @@ public class ListBookShelf implements BookShelf {
 		 * books의 리스트 크기를 리턴
 		 */
 		return books.size();
+	}
+
+	@Override
+	public int delete() {
+		/**
+		 * books 안의 모든 객체들을 삭제하고
+		 * 삭제한 건수를 리턴
+		 */
+		int dltCnt = 0;
+		
+		for (Book book : books) {
+			books.remove(book);
+			dltCnt++;
+		}
+		
+		return dltCnt;
 	}
 
 	// 지원 메소드 선언부

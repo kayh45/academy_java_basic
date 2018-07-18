@@ -174,6 +174,22 @@ public class SetBookShelf implements BookShelf {
 	private boolean isContains(Book book) {
 		return books.contains(book);
 	}
+	
+	@Override
+	public int delete() {
+		/**
+		 * books 안의 모든 객체들을 삭제하고
+		 * 삭제한 건수를 리턴
+		 */
+		int dltCnt = 0;
+		
+		for (Book book : books) {
+			books.remove(book);
+			dltCnt++;
+		}
+		
+		return dltCnt;
+	}
 
 
 }

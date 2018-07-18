@@ -82,5 +82,12 @@ public interface BookShelf {
 	 */
 	public int totalCount();
 	
+	/**
+	 * 등록된 전체 책 정보를 삭제
+	 * 
+	 * @return 삭제된 건수를 리턴
+	 */
+	public int delete();
+	
 	
 }

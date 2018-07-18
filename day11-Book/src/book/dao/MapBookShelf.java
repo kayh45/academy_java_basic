@@ -179,6 +179,23 @@ public class MapBookShelf implements BookShelf {
 	private boolean isContains(Book book) {
 		return books.containsKey(book.getBookId());
 	}
+	
+	@Override
+	public int delete() {
+		/**
+		 * books 안의 모든 객체들을 삭제하고
+		 * 삭제한 건수를 리턴
+		 */
+		int dltCnt = 0;
+		Set<String> keySet = books.keySet();
+		
+		for (String key : keySet) {
+			books.remove(key);
+			dltCnt++;
+		}
+		
+		return dltCnt;
+	}
 
 
 }

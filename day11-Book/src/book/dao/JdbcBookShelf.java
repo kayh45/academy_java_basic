@@ -551,4 +551,41 @@ public class JdbcBookShelf implements BookShelf {
 		
 	}
 
+	@Override
+	public int delete() {
+		/*
+		 * DELETE 쿼리를 이용하여 DB에서 모든 도서 정보를 삭제 
+		 */		
+		
+		int delCnt = 0;
+		
+		// 필요 객체 선언
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			// 커넥션 맺기
+			conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+			// 쿼리 준비
+			String sql = "DELETE book b";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			// 쿼리 실행 (성공 시 1 리턴)
+			delCnt = pstmt.executeUpdate();
+			
+			// 결과 처리
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			// 자원 해제
+			closeResources(null, pstmt, conn);
+		}
+		
+		return delCnt;
+	}
+
 }
