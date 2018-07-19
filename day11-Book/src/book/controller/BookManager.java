@@ -70,7 +70,7 @@ public class BookManager {
 		try {
 			bookShelf.update(book);
 			
-			// 추가 성공한 경우
+			// 수정 성공한 경우
 			message = String.format("도서 정보 [%s] 수정에 성공하였습니다.", book.getBookId());
 			bookView = getView("message");
 			
@@ -80,9 +80,6 @@ public class BookManager {
 			e.printStackTrace();
 			
 		} finally {
-			// 제품 추가 시 예외가 발생해도, 안해도
-			// 제품 추가에 대한 메시지가 출력되어야 하므로
-			// finally 블록에 작성
 			bookView.display(message);
 			
 		}
