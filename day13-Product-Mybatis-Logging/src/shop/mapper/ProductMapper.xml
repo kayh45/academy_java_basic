@@ -31,10 +31,19 @@
 	
 	<update id="update" parameterType="Product">
 		UPDATE product p          
-		   SET p.prodname = #{prodName}     
+		<set>
+		     p.moddate  = sysdate
+			<if test="prodName != null">
+		     , p.prodname = #{prodName}     
+			</if>
+			<if test="price > 0">
 		     , p.price    = #{price}
+			</if>
+			<if test="quantity > -1">
 		     , p.quantity = #{quantity} 
-		     , p.moddate  = sysdate
+			</if>
+		</set>
+		<trim prefix="SET" prefixOverrides="," />
 		 WHERE p.prodcode = #{prodCode} 
 	</update>
 	
