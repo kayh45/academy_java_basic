@@ -23,7 +23,7 @@ public class ShopTest {
 //		GeneralWarehouse warehouse = getWarehouse("set");
 //		GeneralWarehouse warehouse = getWarehouse("map");
 //		GeneralWarehouse warehouse = getWarehouse("jdbc");
-		GeneralWarehouse warehouse = new MybatisWarehouse();
+		GeneralWarehouse warehouse = getWarehouse("mybatis");
 		
 		// 3. 매장을 관리할 매니저를 고용함
 		Manager manager = new Manager(warehouse);
@@ -42,58 +42,58 @@ public class ShopTest {
 		Product birkenstock = new Product("S005", "지제 에바", 29000, 15);
 		
 		
-//		// 0. 모든 제품 삭제하고 시작
-//		manager.remove(adidas);
-//		manager.remove(reebok);
-//		manager.remove(nike);
-//		manager.remove(crocs);
-//		manager.remove(birkenstock);
-//
-//		System.out.println("---------------------------------------");
-//
-//		// 1. 매장에 도착한 제품을 입고
-//		manager.add(adidas);
-//		manager.add(reebok);
-//		manager.add(nike);
-//		manager.add(crocs);
-//		manager.add(birkenstock);
-//		
-//		
-//		
-//		// 2. 입고된 제품 전체 확인
-//		manager.getAllProducts();
-//		
-//		System.out.println("---------------------------------------");
-//		
-//		// 3. 아디다스 제품 수정
-//		Product adidas2 = new Product("S001", "슈퍼스타", 75000, 5);
-//		manager.set(adidas2);
-//	
-//		// 4. 수정된 아디다스 제품 수정 확인
-//		System.out.println();
-//		manager.get(new Product("S001", null, 0, 0));
-//		
-//		System.out.println("---------------------------------------");
-//
-//		// 5. 판매 종료할 제품 폐기
-//		System.out.println();
-//		manager.remove(new Product("S001", null, 0, 0));
+		// 0. 모든 제품 삭제하고 시작
+		manager.remove(adidas);
+		manager.remove(reebok);
+		manager.remove(nike);
+		manager.remove(crocs);
+		manager.remove(birkenstock);
+
+		System.out.println("---------------------------------------");
+
+		// 1. 매장에 도착한 제품을 입고
+		manager.add(adidas);
+		manager.add(reebok);
+		manager.add(nike);
+		manager.add(crocs);
+		manager.add(birkenstock);
+		
+		
+		
+		// 2. 입고된 제품 전체 확인
+		manager.getAllProducts();
+		
+		System.out.println("---------------------------------------");
+		
+		// 3. 아디다스 제품 수정
+		Product adidas2 = new Product("S001", "슈퍼스타", 75000, 5);
+		manager.set(adidas2);
+	
+		// 4. 수정된 아디다스 제품 수정 확인
+		System.out.println();
+		manager.get(new Product("S001", null, 0, 0));
+		
+		System.out.println("---------------------------------------");
+
+		// 5. 판매 종료할 제품 폐기
+		System.out.println();
+		manager.remove(new Product("S001", null, 0, 0));
 		
 		// 6. 폐기 확인을 위해 전체 목록 재 조회
 		System.out.println("---------------------------------------");
 		manager.getAllProducts();
 		
 		// 7. 없는 코드 조회 ==> 
-//		Product p007 = new Product("P007");
-//		
-//		manager.get(p007);
-//		
-//		// 8. 없는 정보 수정
-//		manager.set(p007);
-//		
-//		// 9. 있는 제품 중복 추가 ==> 
-//		Product s001 = new Product("S002");
-//		manager.add(s001);
+		Product p007 = new Product("P007");
+		
+		manager.get(p007);
+		
+		// 8. 없는 정보 수정
+		manager.set(p007);
+		
+		// 9. 있는 제품 중복 추가 ==> 
+		Product s001 = new Product("S002");
+		manager.add(s001);
 	}
 
 }
